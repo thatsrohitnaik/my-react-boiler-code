@@ -5,7 +5,7 @@
 - vite
 - styled components
 - pnpm
-
+- higher order components 
 
 
 
