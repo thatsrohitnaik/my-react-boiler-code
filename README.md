@@ -4,6 +4,7 @@
 - zustand
 - vite
 - styled components
+- pnpm
 
 
 
