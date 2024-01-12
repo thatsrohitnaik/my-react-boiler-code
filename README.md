@@ -6,9 +6,7 @@
 - styled components
 - pnpm
 - higher order components 
-
-
-
+- mirage js mocking server
 
 
 
