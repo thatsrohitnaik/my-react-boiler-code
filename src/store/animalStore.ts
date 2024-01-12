@@ -21,7 +21,7 @@ export const useAnimalStore = create<AnimalState>()(persist((set) => {
     return { bears: 2, cat, increaseAllAnimals, decreaseCats }
 }
     , {
-        name: 'food-storage', // name of the item in the storage (must be unique)
+        name: 'animal-store', // name of the item in the storage (must be unique)
         storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
     },
 
