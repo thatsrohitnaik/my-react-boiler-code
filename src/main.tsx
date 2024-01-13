@@ -4,15 +4,15 @@ import App from './App.tsx'
 import './index.css'
 import  makeServer from "./mock/index.ts";
 
-const environment = process.env.NODE_ENV;
+// const environment = process.env.NODE_ENV;
 
-if (environment !== "production") {
-  makeServer();
-}
+// if (environment !== "production") {
+//   makeServer();
+// }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <p>{environment}</p>
+    {/* <p>{environment}</p> */}
     <App />
   </React.StrictMode>,
 )
