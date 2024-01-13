@@ -23,10 +23,18 @@ export const useTodoStore = create<TodoStore>()((set) => {
         "completed": false
     }
 
+const todo2 = {
+        "userId": 2,
+        "id": 2,
+        "title": "Do something new",
+        "completed": false
+    }
     const getTodo = () => {
         return set(() => {
-            const { data } = useSWR("https://jsonplaceholder.typicode.com/todos/1", fetchTodo);
-            return { todo: data }
+            // const { data } = useSWR("https://jsonplaceholder.typicode.com/todos/1", fetchTodo);
+            // console.log("xyz")
+            
+            return { todo: todo2 }
         })
     }
 
