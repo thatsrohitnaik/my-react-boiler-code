@@ -30,10 +30,11 @@ const todo2 = {
         "completed": false
     }
     const getTodo = () => {
+        const { data } = useSWR("https://jsonplaceholder.typicode.com/todos/1", fetchTodo);
+        
+        console.log("xyz")
+
         return set(() => {
-            // const { data } = useSWR("https://jsonplaceholder.typicode.com/todos/1", fetchTodo);
-            // console.log("xyz")
-            
             return { todo: todo2 }
         })
     }
