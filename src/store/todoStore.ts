@@ -26,7 +26,6 @@ export const useTodoStore = create<TodoStore>()((set) => {
     const getTodo = () => {
         return set(() => {
             const { data } = useSWR("https://jsonplaceholder.typicode.com/todos/1", fetchTodo);
-            debugger;
             return { todo: data }
         })
     }
