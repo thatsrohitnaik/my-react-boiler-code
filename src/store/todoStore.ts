@@ -13,7 +13,7 @@ export const useTodoStore = create<TodoStore>()(persist((set) => {
 
     const getTodo = () => {
         const fetch = async () => {
-            const todo = await get("https://jsonplaceholder.typicode.com/todos/1");
+            const todo = await get<Todo>("https://jsonplaceholder.typicode.com/todos/1");
             return set(() => {
                 return { todo }
             })
