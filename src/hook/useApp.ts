@@ -2,6 +2,7 @@ import { useTodoStore } from '../store/todoStore';
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import { get as getSWR } from './fetcher'
+import { Todo } from "../util/types/";
 
 export const useApp = () => {
   const [number, setNumber] = useState(1);
@@ -11,7 +12,7 @@ export const useApp = () => {
 
   useEffect(() => {
     console.log("number changed to ", number)
-    store.setTodo(data || null)
+    store.setTodo(data || {})
   }, [number])
 
   return [setNumber];

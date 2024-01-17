@@ -3,11 +3,11 @@ export const get = async<T extends unknown>(url: string) => {
         const res = await fetch(url)
         if (res?.ok) {
             const data = await res.json() as T;
-            return data;
+            return {data,  error: ""};
         }
-        return { error: "service error" }
+        return {data:{}, error: ""}
     }
     catch (e) {
-        return { error: e }
+        return {data:{}, error: e}
     }
 }

@@ -1,6 +1,7 @@
 import { create } from "zustand";
-import { get } from "../rest/";
+import { get } from "../util/rest";
 import { persist, createJSONStorage } from "zustand/middleware";
+import { Todo, TodoStore } from "../util/types"
 
 export const useTodoStore = create<TodoStore>()(persist((set) => {
 
@@ -13,15 +14,17 @@ export const useTodoStore = create<TodoStore>()(persist((set) => {
 
     const getTodo = () => {
         const fetch = async () => {
-            const todo = await get<Todo>("https://jsonplaceholder.typicode.com/todos/1");
+          
+            const {data} = await get<Todo>("https://jsonplaceholder.typicode.com/todos/1");
+           
             return set(() => {
-                return { todo }
+                return { todo : data}
             })
         }
         return fetch();
     }
 
-    const setTodo = (todo:Todo | null) => {
+    const setTodo = (todo:Todo) => {
         if(todo)
         return set(() => {
             return { todo }
