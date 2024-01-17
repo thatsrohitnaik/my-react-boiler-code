@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import  makeServer from "./mock/index.ts";
+import  makeServer from "./__mock__/index.ts";
 
 // const environment = process.env.NODE_ENV;
 
