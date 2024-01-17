@@ -1,16 +1,18 @@
 import { useTodoStore } from '../store/todoStore';
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
-import { fetchTodo } from '../rest/fetcher';
+import { get as getSWR } from './fetcher'
 
-export const useApp = () =>{
-    const [number, setNumber] = useState(1);
-    const todo = useTodoStore()
-    const { data} = useSWR("https://jsonplaceholder.typicode.com/todos/"+number, fetchTodo);
-    useEffect(()=>{
-      console.log("number changed to ", number)
-      todo.setTodo(data || null)
-    },[number])
+export const useApp = () => {
+  const [number, setNumber] = useState(1);
+  const store = useTodoStore();
 
-    return [setNumber];
+  const { data } = useSWR("https://jsonplaceholder.typicode.com/todos/" + number, getSWR<Todo>);
+
+  useEffect(() => {
+    console.log("number changed to ", number)
+    store.setTodo(data || null)
+  }, [number])
+
+  return [setNumber];
 }
